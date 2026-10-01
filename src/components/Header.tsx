@@ -1,0 +1,1 @@
+import{Link}from'react-router-dom';export function Header(){return <header className="header"><Link className="brand" to="/">BetCare</Link><nav><Link to="/diagnostico">Diagnóstico</Link><Link to="/login">Entrar</Link><Link className="button small" to="/cadastro">Criar conta</Link></nav></header>}

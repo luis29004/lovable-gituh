@@ -1,0 +1,7 @@
+create table profiles(id uuid primary key references auth.users(id) on delete cascade,name text not null,created_at timestamptz default now());
+create table betting_transactions(id uuid primary key default gen_random_uuid(),user_id uuid not null references auth.users(id) on delete cascade,platform text not null,type text not null check(type in('deposit','withdrawal','other')),amount numeric(12,2) not null check(amount>=0),occurred_at timestamptz not null,notes text,created_at timestamptz default now());
+create table assessments(id uuid primary key default gen_random_uuid(),user_id uuid not null references auth.users(id) on delete cascade,estimated_deposits numeric(12,2) default 0,platform_count integer default 0,has_documents text check(has_documents in('yes','partial','no')),created_at timestamptz default now());
+alter table profiles enable row level security;alter table betting_transactions enable row level security;alter table assessments enable row level security;
+create policy "profile own" on profiles for all using(auth.uid()=id) with check(auth.uid()=id);
+create policy "transactions own" on betting_transactions for all using(auth.uid()=user_id) with check(auth.uid()=user_id);
+create policy "assessments own" on assessments for all using(auth.uid()=user_id) with check(auth.uid()=user_id);

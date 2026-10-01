@@ -1,0 +1,1 @@
+import{Card}from'../components/Card';export default function History(){return <section className="page"><h1>Histórico</h1><p className="muted">Registre depósitos, saques e outras movimentações.</p><Card title="Movimentações"><p>Quando o banco estiver conectado, seus registros aparecerão aqui.</p><button>Adicionar movimentação</button></Card></section>}

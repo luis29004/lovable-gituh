@@ -1,0 +1,1 @@
+import{Link}from'react-router-dom';export default function Login(){return <section className="auth"><h1>Entrar</h1><p>Acesse sua área privada.</p><form><label>E-mail<input type="email"/></label><label>Senha<input type="password"/></label><button type="button">Entrar</button></form><small>Sem conta? <Link to="/cadastro">Cadastre-se</Link></small></section>}

@@ -1,0 +1,1 @@
+export default function Register(){return <section className="auth"><h1>Criar conta</h1><p>Comece a organizar seu histórico.</p><form><label>Nome<input/></label><label>E-mail<input type="email"/></label><label>Senha<input type="password"/></label><button type="button">Criar conta</button></form></section>}

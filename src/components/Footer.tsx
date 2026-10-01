@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="footer"><strong>BetCare</strong><p>Informação e organização para decisões mais conscientes. Não somos uma casa de apostas.</p></footer>}
